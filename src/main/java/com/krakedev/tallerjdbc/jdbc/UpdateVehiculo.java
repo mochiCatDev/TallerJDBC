@@ -18,7 +18,7 @@ public class UpdateVehiculo {
 
 		String sql = """
 			UPDATE vehiculos 
-			SET marca = ?, modelo = ?, anio = ?, precio = ?, color = ?, disponible = ?
+			SET marca = ?, modelo = ?, anio = ?, precio = ?, color = ?, disponible = ?, kilometraje = ?
 			WHERE placa = ?;
 		""";
 
@@ -32,7 +32,8 @@ public class UpdateVehiculo {
 				ps.setDouble(4, vehiculo.getPrecio());
 				ps.setString(5, vehiculo.getColor());
 				ps.setBoolean(6, vehiculo.isDisponible());
-				ps.setString(7, vehiculo.getPlaca());
+				ps.setInt(7, vehiculo.getKilometraje());
+				ps.setString(8, vehiculo.getPlaca());
 
 				int filasAfectadas = ps.executeUpdate();
 				log.info("Vehículo actualizado con éxito. Filas afectadas: {}", filasAfectadas);

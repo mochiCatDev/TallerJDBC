@@ -8,9 +8,9 @@ import com.krakedev.tallerjdbc.jdbc.UpdateVehiculo;
 
 public class Principal {
 	public static void main(String[] args) {
-		System.out.println("=== INICIO DE PRUEBAS CRUD JDBC ===");
+		System.out.println("=== INICIO DE PRUEBAS CRUD JDBC CON KILOMETRAJE ===");
 
-		Vehiculo vehiculoNuevo = new Vehiculo("XYZ-9876", "Chevrolet", "Aveo", 2021, 11500.0, "Negro", true);
+		Vehiculo vehiculoNuevo = new Vehiculo("XYZ-9876", "Chevrolet", "Aveo", 2021, 11500.0, "Negro", true, 45000);
 		
 		System.out.println("\n--- 1. INSERTAR VEHICULO ---");
 		InsertVehiculo.insertar(vehiculoNuevo);
@@ -19,7 +19,7 @@ public class Principal {
 		SelectVehiculo.listar();
 
 		System.out.println("\n--- 3. ACTUALIZAR VEHICULO ---");
-		Vehiculo vehiculoActualizado = new Vehiculo("XYZ-9876", "Chevrolet", "Sail", 2023, 13000.0, "Gris", false);
+		Vehiculo vehiculoActualizado = new Vehiculo("XYZ-9876", "Chevrolet", "Sail", 2023, 13000.0, "Gris", false, 48000);
 		UpdateVehiculo.actualizar(vehiculoActualizado);
 
 		System.out.println("\n--- 4. LISTAR DESPUES DE ACTUALIZAR ---");
@@ -31,6 +31,6 @@ public class Principal {
 		System.out.println("\n--- 6. LISTAR FINAL ---");
 		SelectVehiculo.listar();
 
-		System.out.println("\n=== FIN DE PRUEBAS CRUD JDBC ===");
+		System.out.println("\n=== FIN DE PRUEBAS CRUD JDBC CON KILOMETRAJE ===");
 	}
 }

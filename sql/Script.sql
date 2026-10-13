@@ -8,3 +8,7 @@ create table vehiculos(
 	color VARCHAR(30),
 	disponible BOOLEAN not null
 );
+
+-- Añadir columna kilometraje
+alter table vehiculos 
+add column kilometraje INT not null default 0;
